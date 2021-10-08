@@ -30,26 +30,19 @@
     --purple5: #ffe53d;
     --purple6: #00ded0;
     --purple7: #fffffb;
-
 }
-
-
 
 body {
     font-family: 'Spartan', sans-serif;
     background-color: var(--waikawaGrey);
     color: var(--ivory);
-
 }
 
 /* LATOUT */
-
 .calculator {
     margin: 20px auto;
     max-width: 540px;
 }
-
-
 nav {
     display: flex;
     justify-content: space-between;
@@ -65,9 +58,7 @@ nav {
         align-items: flex-end;
         gap: 20px;
     }
-    .theme-container h3 {
-        font-size: 12px;
-    }
+    .theme-container h3 {font-size: 12px;}
     .theme-selector {
         display: flex;
         flex-direction: column;
@@ -76,16 +67,13 @@ nav {
     .theme-options {
         display: flex;
         justify-content: space-around;
-        
     }
     .theme-options p {
         font-size: 12px;
         margin-bottom: .5em;
         cursor: pointer;
     }
-    .theme-options p:hover {
-        color: var(--light6);
-    }
+    .theme-options p:hover {color: var(--light6);}
     .theme-indicator {
         background-color: var(--midnight);
         height: 20px;
@@ -96,9 +84,7 @@ nav {
         background-repeat: no-repeat;
         background-position:center left 5px;
     }
-
 /* ================================================================ */
-
 .output {
     margin-bottom: 32px;
     max-width: 540px;
@@ -107,7 +93,6 @@ nav {
     background-color: var(--tangaroa);
     border-radius: 10px;
 }
-
 /* ================================================================ */
 
 main {
@@ -159,59 +144,36 @@ main {
         font-size: 20px;
         font-weight: 700;
     }
-    
-
-    
 
     /* MEDIA */
-
     @media (max-width: 620px) {
-        .calculator {
-            max-width: 327px;
-        }
-
-        .output {
-            padding: 26px 24px 26px;          
-        }
-
-        main {
-            padding: 24;
-        }
+        .calculator {max-width: 327px;}
+        .output {padding: 26px 24px 26px;}
+        main {padding: 24;}
         .container-1 button{
             font-size: 28px;
             height: 64px;
             width: 60px;
-            margin-bottom: 32px;
+            margin-bottom:15px;
         }
-        .container-1 .del {
-            font-size: 16px;
-        }
+        .container-1 .del {font-size: 16px;}
         .container-2 button {
             width: 127px;
             height: 64px;
-            
         }
-        
     }
 
 
 
 
     /* THEME */
-
     .dark {
         background-color: var(--dark5);
         color: var(--dark1);
     }
-    .dark .theme-indicator {
-        background-color: var(--dark3);
-    }
-    .dark .output {
-        background-color: var(--dark3);
-    }
-    .dark main {
-        background-color: var(--dark4);
-    }
+    .dark .theme-indicator {background-color: var(--dark3);}
+    .dark .output {background-color: var(--dark3);}
+    .dark main {background-color: var(--dark4);}
     .dark .container-1 button {
         background-color: var(--dark2);
         color: var(--dark3);
@@ -228,24 +190,16 @@ main {
         background-color: var(--dark7);
         color: var(--dark2);
     }
-    .dark .theme-indicator {
-        background-position:center left 5px;
-    }
+    .dark .theme-indicator {background-position:center left 5px;}
 
 /* ==================================== */
     .light {
         background-color: var(--light2);
         color: var(--light4);
     }
-    .light .theme-indicator {
-        background-color: var(--light3);
-    }
-    .light .output {
-        background-color: var(--light1);
-    }
-    .light main {
-        background-color: var(--light3);
-    }
+    .light .theme-indicator {background-color: var(--light3);}
+    .light .output {background-color: var(--light1);}
+    .light main {background-color: var(--light3);}
     .light .container-1 button {
         background-color: var(--light2);
         color: var(--light4);
@@ -262,25 +216,15 @@ main {
         background-color: var(--light6);
         color: var(--light1);
     }
-    .light .theme-indicator {
-        background-position:center;
-    }
-
-
+    .light .theme-indicator {background-position:center;}
 /* ==================================== */
     .purple {
         background-color: var(--purple1);
         color: var(--purple5);
     }
-    .purple .theme-indicator {
-        background-color: var(--purple2);
-    }
-    .purple .output {
-        background-color: var(--purple2);
-    }
-    .purple main {
-        background-color: var(--purple2);
-    }
+    .purple .theme-indicator {background-color: var(--purple2);}
+    .purple .output {background-color: var(--purple2);}
+    .purple main {background-color: var(--purple2);}
     .purple .container-1 button {
         background-color: var(--purple4);
         color: var(--purple5);
@@ -297,7 +241,6 @@ main {
         background-color: var(--purple6);
         color: var(--purple1);
     }
-    .purple .theme-indicator {
-        background-position:center right 5px;
-    }
+    .purple .theme-indicator {background-position:center right 5px;}
+
     
