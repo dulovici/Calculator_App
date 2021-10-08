@@ -8,7 +8,54 @@
     <script src="./script.js" defer></script>
     <title>Calculator</title>
 </head>
-<body>
-    <h1>Dev</h1>
+<body class="dark">
+    <div class="calculator">
+        <nav>
+            <h1>calc</h1>
+            <div class="theme-container">
+                <h3>THEME</h3>
+                <div class="theme-selector">
+                    <div class="theme-options">
+                        <p class="option">1</p>
+                        <p class="option">2</p>
+                        <p class="option">3</p>
+                    </div>
+                <div class="theme-indicator"></div>  
+                </div>
+            </div>
+        </nav>
+
+        <div class="output">
+            <h1>0</h1>
+        </div>
+
+        <main>
+            <div class="container-1">
+                <button class='num' value="7">7</button>
+                <button class='num' value="8">8</button>
+                <button class='num' value="9">9</button>
+                <button class="del" value="del">DEL</button>
+
+                <button class='num' value="4">4</button>
+                <button class='num' value="5">5</button>
+                <button class='num' value="6">6</button>
+                <button class="operator" value="+">+</button>
+
+                <button class='num' value="1">1</button>
+                <button class='num' value="2">2</button>
+                <button class='num' value="3">3</button>
+                <button class="operator" value="-">-</button>
+
+                <button class="dot" value=".">.</button>
+                <button class='num' value="0">0</button>
+                <button class="operator" value="/">/</button>
+                <button class="operator" value="*">x</button>
+            </div>
+            <div class="container-2">
+                <button class="reset" value="reset">RESET</button>
+                <button class="operator equal" value="=">=</button>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
