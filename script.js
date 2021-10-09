@@ -38,28 +38,26 @@ function write() {
         calculator.operator = this.value;
         calculator.output = calculator.operator;
         screen.textContent = calculator.output
-
     }
     if(calculator.operator && this.className !== 'del' && this.className !== 'operator') {
         calculator.secondOperand += this.value;
         calculator.output = calculator.secondOperand;
         screen.textContent = calculator.output;
     }
-        if(calculator.operator && this.className === 'del') {
+        if(calculator.operator && calculator.secondOperand && this.className === 'del') {
             calculator.secondOperand = calculator.secondOperand.slice(0, -1);
             calculator.output = calculator.secondOperand;
             screen.textContent = calculator.output
         }
-
-    if(this.className === 'operator' &&  calculator.secondOperand) {
-        calculate()
-        calculator.operator = this.value;
-    }
+        if(this.className === 'operator' &&  calculator.secondOperand) {
+            calculate()
+            calculator.operator = this.value;
+        }
+        // console.log(calculator)
 }
 
 function arm() {
     calculator.firstOperand = calculator.output;
-    // calculator.operator = null;
     calculator.secondOperand = ''
     screen.textContent = calculator.output;
 }
