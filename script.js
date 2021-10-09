@@ -24,6 +24,9 @@ const calculator = {
 
 // FUNCTIONS
 function write() {
+    if(this.className === 'dot' && calculator.firstOperand.includes('.') && !calculator.operator) return
+    if(this.className === 'dot' && calculator.secondOperand.includes('.')) return
+
     if(!calculator.operator && this.className !== 'del'  && this.className !== 'operator') {
         calculator.firstOperand += this.value;
         calculator.output = calculator.firstOperand;
@@ -53,7 +56,7 @@ function write() {
             calculate()
             calculator.operator = this.value;
         }
-        // console.log(calculator)
+        console.log(calculator)
 }
 
 function arm() {
