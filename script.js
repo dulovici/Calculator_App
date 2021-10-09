@@ -13,81 +13,78 @@ const reset = document.querySelector('.reset');
 const calc = document.querySelector('.equal');
 
 
-// Start State
-const calculator = {
-    output: '0',
-    firstOperand: '',
-    operator: null,
-    secondOperand: ''
-}
+// State
+let output = '0';
+let firstOperand = '';
+let operator = null;
+let secondOperand = '';
 
 
 // FUNCTIONS
 function write() {
-    if(this.className === 'dot' && calculator.firstOperand.includes('.') && !calculator.operator) return
-    if(this.className === 'dot' && calculator.secondOperand.includes('.')) return
+    if(this.className === 'dot' && firstOperand.includes('.') && !operator) return
+    if(this.className === 'dot' && secondOperand.includes('.')) return
 
-    if(!calculator.operator && this.className !== 'del'  && this.className !== 'operator') {
-        calculator.firstOperand += this.value;
-        calculator.output = calculator.firstOperand;
-        screen.textContent = calculator.output
+    if(!operator && this.className !== 'del'  && this.className !== 'operator') {
+        firstOperand += this.value;
+        output = firstOperand;
+        screen.textContent = output
     }
-        if(!calculator.operator && this.className === 'del') {
-            calculator.firstOperand = calculator.firstOperand.slice(0, -1);
-            calculator.output = calculator.firstOperand;
-            screen.textContent = calculator.output
+        if(!operator && this.className === 'del') {
+            firstOperand = firstOperand.slice(0, -1);
+            output = firstOperand;
+            screen.textContent = output
         }
-    if(this.className === 'operator' && !calculator.secondOperand) {
-        calculator.operator = this.value;
-        calculator.output = calculator.operator;
-        screen.textContent = calculator.output
+    if(this.className === 'operator' && !secondOperand) {
+        operator = this.value;
+        output = operator;
+        screen.textContent = output
     }
-    if(calculator.operator && this.className !== 'del' && this.className !== 'operator') {
-        calculator.secondOperand += this.value;
-        calculator.output = calculator.secondOperand;
-        screen.textContent = calculator.output;
+    if(operator && this.className !== 'del' && this.className !== 'operator') {
+        secondOperand += this.value;
+        output = secondOperand;
+        screen.textContent = output;
     }
-        if(calculator.operator && calculator.secondOperand && this.className === 'del') {
-            calculator.secondOperand = calculator.secondOperand.slice(0, -1);
-            calculator.output = calculator.secondOperand;
-            screen.textContent = calculator.output
+        if(operator && secondOperand && this.className === 'del') {
+            secondOperand = secondOperand.slice(0, -1);
+            output = secondOperand;
+            screen.textContent = output
         }
-        if(this.className === 'operator' &&  calculator.secondOperand) {
+        if(this.className === 'operator' &&  secondOperand) {
             calculate()
-            calculator.operator = this.value;
+            operator = this.value;
         }
-        console.log(calculator)
 }
 
 function arm() {
-    calculator.firstOperand = calculator.output;
-    calculator.secondOperand = ''
-    screen.textContent = calculator.output;
+    firstOperand = output;
+    secondOperand = ''
+    screen.textContent = output;
 }
 
 function resetCalc() {
-    calculator.output = '0';
-    calculator.firstOperand = '';
-    calculator.operator = null;
-    calculator.secondOperand = '';
-    screen.textContent = calculator.output
+    output = '0';
+    firstOperand = '';
+    operator = null;
+    secondOperand = '';
+    screen.textContent = output
 }
 
 function calculate() {
-    if(calculator.operator === '+') {
-        calculator.output = `${+calculator.firstOperand + +calculator.secondOperand}`;
+    if(operator === '+') {
+        output = `${+firstOperand + +secondOperand}`;
         arm()
     };
-    if(calculator.operator === '-') {
-        calculator.output = `${+calculator.firstOperand - +calculator.secondOperand}`;
+    if(operator === '-') {
+        output = `${+firstOperand - +secondOperand}`;
         arm()  
     };
-    if(calculator.operator === '*') {
-        calculator.output = `${+calculator.firstOperand * +calculator.secondOperand}`;
+    if(operator === '*') {
+        output = `${+firstOperand * +secondOperand}`;
         arm()
     };
-    if(calculator.operator === '/') {
-        calculator.output = `${+calculator.firstOperand / +calculator.secondOperand}`;
+    if(operator === '/') {
+        output = `${+firstOperand / +secondOperand}`;
         arm() 
     };
 }
@@ -109,10 +106,8 @@ function setTheme() {
 }
 
 // EVENTS
-btns.forEach(el => {
-    el.addEventListener('click', write)
-});
-
+btns.forEach(el =>  el.addEventListener('click', write));
+    
 calc.addEventListener('click', calculate);
 
 reset.addEventListener('click', resetCalc);

@@ -86,6 +86,7 @@ nav {
     }
 /* ================================================================ */
 .output {
+    height: 112px;
     margin-bottom: 32px;
     max-width: 540px;
     text-align: right;
