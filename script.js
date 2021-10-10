@@ -93,25 +93,25 @@ function checkStorage() {
     body.className = '';
     body.classList.add(`${sessionStorage.getItem('theme')}`)
 }
-
+function setStorage(theme) {
+    sessionStorage.clear();
+    sessionStorage.setItem('theme', `${theme}`);
+}
 function setTheme() {
     if(this.textContent === '1') {
         body.className = '';
         body.classList.add('dark')
-        sessionStorage.clear();
-        sessionStorage.setItem('theme', 'dark');
+        setStorage(body.className )
     }
     if(this.textContent === '2') {
         body.className = '';
         body.classList.add('light')
-        sessionStorage.clear();
-        sessionStorage.setItem('theme', 'light');
+        setStorage(body.className )
     }
     if(this.textContent === '3') {
         body.className = '';
         body.classList.add('purple')
-        sessionStorage.clear();
-        sessionStorage.setItem('theme', 'purple');
+        setStorage(body.className )
     }
 }
 
