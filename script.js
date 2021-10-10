@@ -91,7 +91,10 @@ function calculate() {
 
 function checkStorage() {
     body.className = '';
-    body.classList.add(`${sessionStorage.getItem('theme')}`)
+    
+    sessionStorage.getItem('theme')  
+    ? body.classList.add(`${sessionStorage.getItem('theme')}`)
+    : body.classList.add(`dark`)
 }
 function setStorage(theme) {
     sessionStorage.clear();
@@ -117,6 +120,10 @@ function setTheme() {
 
 // EVENTS
 checkStorage()
+
+body.addEventListener('load', ()=> {
+    
+})
 
 btns.forEach(el =>  el.addEventListener('click', write));
     
