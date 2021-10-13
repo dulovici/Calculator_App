@@ -1,4 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300;500;700&display=swap');
 
-h1 {
-    color: purple;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+:root {
+    --dark1: #fffffb;
+    --dark2: #eae3db;
+    --dark3: #181f32;
+    --dark4: #242D44;
+    --dark5: #3b4664;
+    --dark6: #647299;
+    --dark7: #d13f30;
+    
+    --light1: #eeeeee;
+    --light2: #e6e6e6;
+    --light3: #c5c0c0;
+    --light4: #36362c;
+    --light5: #378187;
+    --light6: #c85402;
+    --light7: #fffffb;
+
+    --purple1: #17062a;
+    --purple2: #1e0936;
+    --purple4: #331c4d;
+    --purple3: #56077c;
+    --purple5: #ffe53d;
+    --purple6: #00ded0;
+    --purple7: #fffffb;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    background-color: var(--waikawaGrey);
+    color: var(--ivory);
+}
+
+/* LATOUT */
+.calculator {
+    margin: 20px auto;
+    max-width: 540px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+    nav h1 {
+        font-size: 32px;
+        font-weight: 700;
+    }
+    .theme-container {
+        display: flex;
+        align-items: flex-end;
+        gap: 20px;
+    }
+    .theme-container h3 {font-size: 12px;}
+    .theme-selector {
+        display: flex;
+        flex-direction: column;
+        width: 70px;
+    }
+    .theme-options {
+        display: flex;
+        justify-content: space-around;
+    }
+    .theme-options p {
+        font-size: 12px;
+        margin-bottom: .5em;
+        cursor: pointer;
+    }
+    .theme-options p:hover {color: var(--light6);}
+    .theme-indicator {
+        background-color: var(--midnight);
+        height: 20px;
+        padding: 4px;
+        border-radius: 10px;
+        background-image: url(./images/Basic_red_dot.png);
+        background-size: 15px;
+        background-repeat: no-repeat;
+        background-position:center left 5px;
+    }
+/* ================================================================ */
+.output {
+    height: 112px;
+    margin-bottom: 32px;
+    max-width: 540px;
+    text-align: right;
+    padding: 38px 32px 36px;
+    background-color: var(--tangaroa);
+    border-radius: 10px;
+}
+/* ================================================================ */
+
+main {
+    background-color: var(--midnight);
+    border-radius: 10px;
+    max-width: 540px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+}
+    .container-1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .container-1 button{
+        font-size: 32px;
+        font-weight: 700;
+        height: 64px;
+        width: 101px;
+        margin-bottom: 32px;
+        border-radius: 10px; 
+        color: var(--tangaroa);   
+        cursor: pointer;    
+    }
+    .container-1 .del {
+        background-color: var(--waikawaGrey);
+        color: var(--ivory);
+    }
+    .container-2 {
+        display: flex;
+        justify-content: space-between;
+    }
+    .container-2 button {
+        width: 227px;
+        height: 64px;
+        border-radius: 10px;
+        cursor: pointer;  
+    }
+    .container-2 .reset{
+        background-color: var(--waikawaGrey);
+        color: var(--ivory);
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .container-2 .equal{
+        background-color: var(--persianRed);
+        color: var(--ivory);
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    /* MEDIA */
+    @media (max-width: 620px) {
+        .calculator {max-width: 327px;}
+        .output {padding: 26px 24px 26px;}
+        main {padding: 24;}
+        .container-1 button{
+            font-size: 28px;
+            height: 64px;
+            width: 60px;
+            margin-bottom:15px;
+        }
+        .container-1 .del {font-size: 16px;}
+        .container-2 button {
+            width: 127px;
+            height: 64px;
+        }
+    }
+
+
+
+
+    /* THEME */
+    .dark {
+        background-color: var(--dark5);
+        color: var(--dark1);
+    }
+    .dark .theme-indicator {background-color: var(--dark3);}
+    .dark .output {background-color: var(--dark3);}
+    .dark main {background-color: var(--dark4);}
+    .dark .container-1 button {
+        background-color: var(--dark2);
+        color: var(--dark3);
+    }
+    .dark .container-1 .del {
+        background-color: var(--dark6);
+        color: var(--dark2);
+    }
+    .dark .container-2 .reset {
+        background-color: var(--dark6);
+        color: var(--dark2);
+    }
+    .dark .container-2 .equal {
+        background-color: var(--dark7);
+        color: var(--dark2);
+    }
+    .dark .theme-indicator {background-position:center left 5px;}
+
+/* ==================================== */
+    .light {
+        background-color: var(--light2);
+        color: var(--light4);
+    }
+    .light .theme-indicator {background-color: var(--light3);}
+    .light .output {background-color: var(--light1);}
+    .light main {background-color: var(--light3);}
+    .light .container-1 button {
+        background-color: var(--light2);
+        color: var(--light4);
+    }
+    .light .container-1 .del {
+        background-color: var(--light5);
+        color: var(--light1);
+    }
+    .light .container-2 .reset {
+        background-color: var(--light5);
+        color: var(--light1);
+    }
+    .light .container-2 .equal {
+        background-color: var(--light6);
+        color: var(--light1);
+    }
+    .light .theme-indicator {background-position:center;}
+/* ==================================== */
+    .purple {
+        background-color: var(--purple1);
+        color: var(--purple5);
+    }
+    .purple .theme-indicator {background-color: var(--purple2);}
+    .purple .output {background-color: var(--purple2);}
+    .purple main {background-color: var(--purple2);}
+    .purple .container-1 button {
+        background-color: var(--purple4);
+        color: var(--purple5);
+    }
+    .purple .container-1 .del {
+        background-color: var(--purple3);
+        color: var(--purple7);
+    }
+    .purple .container-2 .reset {
+        background-color: var(--purple3);
+        color: var(--purple7);
+    }
+    .purple .container-2 .equal {
+        background-color: var(--purple6);
+        color: var(--purple1);
+    }
+    .purple .theme-indicator {background-position:center right 5px;}
+
+    
+    /* fix overflow*/
